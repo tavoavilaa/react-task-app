@@ -1,38 +1,173 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
+
+:root{
+  --primary: #369bed;
+  --primary-hover: #2289ff;
+  --secundary: #1f3755;
+  --white: #ffffff;
+  --font: 'Lato', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background: rgb(14,22,33);
+  background: linear-gradient(90deg, rgba(14,22,33,1) 0%, rgba(12,33,60,1) 100%);
+  color: var(--white);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font);
+  font-size: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.App{
+  margin: 0 auto;
+  padding: 5rem;
+}
+
+
+input[type="submit"] {
+    padding: .6rem 2rem;
+    background-color: var(--primary);
+    color: white;
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    transition: background-color .3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--primary-hover);
+
+}
+
+
+input[type="text"] {
+  padding: .8rem 1.2rem;
+  border-radius: 8px;
+  outline: none;
+  border: 2px solid transparent;
+  transition: border .3s ease;
+  box-sizing: content-box;
+  font-family: var(--font);
+  background-color: var(--secundary);
+  color: var(--white);
+  font-size: 1rem;
+}
+
+input[type="text"]:focus {
+  
+  border: 2px solid var(--primary-hover);
+}
+
+input[type="text"]:hover {
+  
+  border: 2px solid  var(--primary-hover);
+}
+
+input[type="text"]::placeholder {
+  
+  color: var(--white);
+  font-size: 1rem;
+  font-family: var(--font);
+  font-weight: 300;
+}
+
+form{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  justify-content: space-around;
+  gap: 1rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--primary-hover);
+  margin-bottom: 40px;
+}
+
+@media (min-width: 768px){
+  .App{
+    max-width: 50%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media (max-width: 768px) {
+
+  .App{
+    max-width: 100%;
+    padding: 2rem;
+  }
+
+  form{
+    grid-template-columns: 1fr;
+  }
+
+
+  tbody tr td{
+    margin: 0 auto;
+  }
+
+  .show-task-done{
+    flex-direction: column;
+  }
+
+  .clear-btn{
+    margin-left: 0 !important;
+  }
+
+  
+
+}
+
+th{
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+tbody tr{
+  margin-bottom: 16px;
+}
+
+td{
+  display: flex;
+}
+
+td input {
+  margin-left: auto;
+}
+
+tbody tr td{
+  padding: .8rem 1.2rem;
+  border-radius: 8px;
+  outline: none;
+  border: 2px solid transparent;
+  transition: border .3s ease;
+  box-sizing: content-box;
+  font-family: var(--font);
+  background-color: var(--secundary);
+  color: var(--white);
+  font-size: 1rem;
+}
+
+table{
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+tbody{
+  width: 100%;
+  margin-top: 16px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App table:nth-last-child(1){
+  margin-top: 40px;
+  border: 1px solid var(--primary-hover);
+  padding: 1rem;
+  border-radius: 24px;
 }
+
+
+
